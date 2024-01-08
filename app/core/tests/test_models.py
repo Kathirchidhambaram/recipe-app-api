@@ -6,10 +6,6 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
 
-
-# Calling wait for db before executing test
-call_command('wait_for_db')
-
 class ModelTests(TestCase):
 
     def test_user_created_by_email_successful(self):
