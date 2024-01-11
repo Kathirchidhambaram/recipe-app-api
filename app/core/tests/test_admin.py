@@ -24,16 +24,13 @@ class AdminSiteTests(TestCase):
 
         self.user = get_user_model().objects.create_user(
             email = 'testuser@gmail.com',
-            password = 'testuser123',
-            name = 'Test User'
+            password = 'testuser123'
         )
     
     def test_user_lists(self):
         """Test whether users are listed on client page"""
 
-        print('users', self.user, self.user.name)
+
         url = reverse('admin:core_user_changelist')
         res = self.client.get(url)
-
-        print(str(res.content).split('\n'))
         self.assertContains(res, self.user.email)
