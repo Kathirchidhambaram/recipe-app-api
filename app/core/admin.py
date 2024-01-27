@@ -50,4 +50,7 @@ class UserAdmin(BaseUserAdmin):
         "groups",
         "user_permissions",
     )
+
+
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Recipe)
